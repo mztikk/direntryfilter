@@ -1,0 +1,9 @@
+[package]
+name = "direntryfilter"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["Nils Feierabend <mztikk@outlook.de>"]
+repository = "https://github.com/mztikk/direntryfilter"
+license = "MIT"
+description = "library to filter DirEntry"
