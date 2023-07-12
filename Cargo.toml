@@ -2,8 +2,14 @@
 name = "direntryfilter"
 version = "0.2.0"
 edition = "2021"
-
 authors = ["Nils Feierabend <mztikk@outlook.de>"]
 repository = "https://github.com/mztikk/direntryfilter"
 license = "MIT"
 description = "library to filter DirEntry"
+
+[features]
+serde = ["dep:serde"]
+
+[dependencies]
+rayon = "1.7.0"
+serde = { version = "1.0.164", features = ["derive"], optional = true }
