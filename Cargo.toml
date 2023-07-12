@@ -11,5 +11,4 @@ description = "library to filter DirEntry"
 serde = ["dep:serde"]
 
 [dependencies]
-rayon = "1.7.0"
 serde = { version = "1.0.164", features = ["derive"], optional = true }

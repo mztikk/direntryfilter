@@ -13,8 +13,6 @@ mod file_only;
 
 pub use directory_only::DirectoryOnlyFilter;
 pub use file_only::FileOnlyFilter;
-
-use rayon::prelude::{IntoParallelRefIterator, ParallelIterator};
 use std::fs::DirEntry;
 
 /// Provides an interface filtering and ignoring DirEntry.
@@ -84,6 +82,6 @@ impl IgnoreDirEntry for DirEntryFilter {
 
 impl<T: AsRef<[DirEntryFilter]>> IgnoreDirEntry for T {
     fn ignore(&self, entry: &DirEntry) -> bool {
-        self.as_ref().par_iter().any(|filter| filter.ignore(entry))
+        self.as_ref().iter().any(|filter| filter.ignore(entry))
     }
 }
